@@ -1,6 +1,8 @@
 ---
 home: true
 heroImage: https://deepchat.thinkinai.xyz/logo.png
+heroText: DeepChat
+tagline: 基于大型语言模型的AI聊天应用
 actions:
   - text: 产品介绍
     link: /guide/introduction/

@@ -16,7 +16,6 @@ export default defineUserConfig({
     logo: 'https://deepchat.thinkinai.xyz/logo.png',
     author: 'DeepChat',
     authorAvatar: 'https://deepchat.thinkinai.xyz/logo.png',
-    // 导航栏
     navbar: [
       // DeepChat介绍入口
       { text: 'DeepChat介绍', link: '/guide/introduction/' },
@@ -27,10 +26,8 @@ export default defineUserConfig({
       // 官网入口 
       { text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
     ],
-    // 侧边栏配置
-    catalog: true,
     series: {
-      '/guide/introduction': [
+      '/guide/introduction/': [
         {
           text: 'DeepChat介绍',
           children: [
@@ -40,7 +37,7 @@ export default defineUserConfig({
           ]
         }
       ],
-      '/guide/getting-started': [
+      '/guide/getting-started/': [
         {
           text: '快速开始',
           children: [
@@ -51,7 +48,7 @@ export default defineUserConfig({
           ]
         }
       ],
-      '/guide/user-guide': [
+      '/guide/user-guide/': [
         {
           text: '使用指南',
           children: [
@@ -65,6 +62,9 @@ export default defineUserConfig({
         }
       ]
     },
-    lastUpdated: true
+    // 最后更新时间
+    lastUpdated: true,
+    // 自动设置系列
+    autoSetSeries: true,
   })
 }) 
