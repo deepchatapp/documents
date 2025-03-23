@@ -81,9 +81,10 @@ a.router-link-active {
   box-sizing: border-box;
   width: var(--sidebar-width);
   margin: 0;
-  background-color: #fff;
+  background-color: #f8f9fa;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   overflow-y: auto;
+  padding-top: 1.5rem;
   
   // 侧边栏链接
   .sidebar-links {
@@ -98,6 +99,50 @@ a.router-link-active {
       }
     }
   }
+  
+  .sidebar-group {
+    background-color: transparent;
+    margin-bottom: 0.75rem;
+    
+    .sidebar-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      margin: 0;
+      transition: all 0.2s;
+      border-left: 0.25rem solid transparent;
+      
+      &:hover {
+        color: var(--c-brand);
+      }
+      
+      &.active {
+        border-left-color: var(--c-brand);
+        color: var(--c-brand);
+      }
+    }
+    
+    .sidebar-group-items {
+      padding-left: 1rem;
+    }
+  }
+  
+  .sidebar-link {
+    padding: 0.5rem 1.5rem 0.5rem 1.75rem;
+    border-left: 0.25rem solid transparent;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    
+    &:hover {
+      color: var(--c-brand);
+    }
+    
+    &.active {
+      border-left-color: var(--c-brand);
+      color: var(--c-brand);
+      font-weight: 600;
+    }
+  }
 }
 
 .navbar {
@@ -110,6 +155,24 @@ a.router-link-active {
   background-color: #fff;
   box-sizing: border-box;
   border-bottom: 1px solid #eaecef;
+  
+  .home-link {
+    margin-right: auto;
+  }
+  
+  .nav-links {
+    .nav-item {
+      margin-left: 1.5rem;
+      
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  .search-box {
+    margin-right: 1rem;
+  }
 }
 
 .sidebar-mask {
@@ -247,4 +310,75 @@ div[class*="language-"] {
 // 额外的链接样式
 a.sidebar-link:hover {
   color: var(--c-brand) !important;
+}
+
+// 侧边栏折叠按钮样式
+.sidebar-heading {
+  position: relative;
+  cursor: pointer;
+  
+  .arrow {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    transition: transform 0.2s;
+    
+    &.down {
+      transform: rotate(90deg);
+    }
+  }
+  
+  &.active {
+    color: var(--c-brand) !important;
+    border-left-color: var(--c-brand) !important;
+  }
+}
+
+// 侧边栏分组样式
+.sidebar-group {
+  margin-bottom: 0.5rem;
+  
+  .sidebar-group-items {
+    padding-left: 0.5rem;
+  }
+}
+
+// 确保侧边栏组标题始终使用主题色
+.sidebar-heading.active {
+  color: var(--c-brand) !important;
+}
+
+// 搜索框样式优化
+.search-box {
+  input {
+    border-radius: 4px;
+    background-color: #f3f4f5;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    
+    &:focus {
+      background-color: #fff;
+      border-color: var(--c-brand);
+      box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+    }
+  }
+  
+  .suggestions {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .suggestion {
+      &.focused {
+        background-color: rgba(79, 70, 229, 0.08);
+      }
+      
+      a {
+        color: var(--c-text);
+        
+        .page-title {
+          color: var(--c-brand);
+        }
+      }
+    }
+  }
 } 
