@@ -1,7 +1,7 @@
 :root {
   // 主题颜色
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
+  --c-brand: rgb(79, 70, 229);
+  --c-brand-light: rgb(99, 90, 249);
   
   // 文本颜色
   --c-text: #2c3e50;
@@ -11,6 +11,83 @@
 
   // 自定义变量
   --content-width: 840px;
+  --sidebar-width: 300px;
+}
+
+// 左右布局相关样式
+.theme-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: var(--sidebar-width);
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: 3.6rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eaecef;
+}
+
+.sidebar-mask {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.page {
+  padding-left: var(--sidebar-width);
+}
+
+.theme-default-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 2.5rem 2rem;
+}
+
+// 移动端响应式调整
+@media (max-width: 719px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .page {
+    padding-left: 0;
+  }
+
+  .navbar {
+    left: 0;
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-open .sidebar-mask {
+    display: block;
+  }
 }
 
 // 警告信息样式

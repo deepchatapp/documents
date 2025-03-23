@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/logo.png
+heroImage: https://deepchat.thinkinai.xyz/logo.png
 actions:
   - text: 快速开始
     link: /guide/getting-started/

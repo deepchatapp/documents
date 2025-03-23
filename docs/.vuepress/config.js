@@ -3,10 +3,10 @@ module.exports = {
   description: 'DeepChat官方文档',
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }]
+    ['link', { rel: 'icon', href: 'https://deepchat.thinkinai.xyz/logo.png' }]
   ],
   themeConfig: {
-    logo: '/images/logo.png',
+    logo: 'https://deepchat.thinkinai.xyz/logo.png',
     nav: [
       { text: '首页', link: '/' },
       { text: '快速开始', link: '/guide/getting-started/' },
