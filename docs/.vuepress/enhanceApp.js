@@ -41,22 +41,22 @@ export default ({
         position: fixed;
         z-index: 100;
         right: 20px;
-        bottom: 80px;
-        width: 50px;
-        height: 50px;
+        top: 80px;
+        padding: 8px 16px;
         background: rgb(79, 70, 229);
         color: white;
-        border-radius: 50%;
+        border-radius: 8px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        font-size: 22px;
+        font-size: 14px;
         font-weight: bold;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       `;
       // 设置按钮文本
-      tocToggleBtn.innerText = 'T';
+      tocToggleBtn.innerText = '显示目录';
       // 添加到body的最后位置
       document.body.appendChild(tocToggleBtn);
       console.log('TOC toggle button added to document body');
@@ -106,7 +106,7 @@ function addRightToc() {
       position: fixed !important;
       z-index: 1000 !important;
       right: 20px !important;
-      bottom: 80px !important;
+      top: 80px !important;
       padding: 8px 16px !important;
       background: rgb(79, 70, 229) !important;
       color: white !important;
@@ -390,9 +390,16 @@ function addRightToc() {
         // 手动触发相同的隐藏逻辑
         toc.setAttribute('data-visible', 'false');
         toc.classList.add('collapsed');
+        
+        // 添加过渡效果
+        toc.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         toc.style.transform = 'translateX(calc(100% + 20px))';
         toc.style.opacity = '0';
-        toc.style.visibility = 'hidden';
+        
+        // 延迟设置visibility以允许动画完成
+        setTimeout(() => {
+          toc.style.visibility = 'hidden';
+        }, 300);
         
         document.querySelector('.page')?.classList.add('expanded');
         
@@ -400,6 +407,8 @@ function addRightToc() {
         const toggleBtn = document.querySelector('.toc-toggle-btn');
         if (toggleBtn) {
           toggleBtn.classList.remove('active');
+          toggleBtn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+          toggleBtn.style.transform = 'translateX(0)';
           toggleBtn.style.opacity = '1';
           toggleBtn.style.visibility = 'visible';
           console.log('设置显示目录按钮可见');
@@ -613,29 +622,42 @@ function setupTocToggle(rightToc) {
         rightToc.setAttribute('data-visible', 'true');
         rightToc.classList.remove('collapsed');
         
-        // 使用内联样式确保可见 - 简化样式但保留关键属性
-        rightToc.style.position = 'fixed';
-        rightToc.style.zIndex = '100';
-        rightToc.style.top = '80px';
-        rightToc.style.right = '20px';
-        rightToc.style.width = '240px';
-        rightToc.style.maxHeight = 'calc(100vh - 140px)';
-        rightToc.style.background = '#fff';
-        rightToc.style.borderRadius = '8px';
-        rightToc.style.padding = '16px';
-        rightToc.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.1)';
-        rightToc.style.transform = 'translateX(0)';
-        rightToc.style.opacity = '1';
+        // 设置过渡属性
+        rightToc.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         rightToc.style.visibility = 'visible';
         rightToc.style.display = 'block';
+        
+        // 使用延迟设置transform和opacity以创建动画效果
+        setTimeout(() => {
+          // 使用内联样式确保可见 - 简化样式但保留关键属性
+          rightToc.style.position = 'fixed';
+          rightToc.style.zIndex = '100';
+          rightToc.style.top = '80px';
+          rightToc.style.right = '20px';
+          rightToc.style.width = '240px';
+          rightToc.style.maxHeight = 'calc(100vh - 140px)';
+          rightToc.style.background = '#fff';
+          rightToc.style.borderRadius = '8px';
+          rightToc.style.padding = '16px';
+          rightToc.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.1)';
+          rightToc.style.transform = 'translateX(0)';
+          rightToc.style.opacity = '1';
+        }, 10);
         
         page.classList.remove('expanded');
         newTocToggleBtn.classList.add('active');
         localStorage.setItem('tocCollapsed', 'false');
         
-        // 隐藏"显示目录"按钮
+        // 隐藏"显示目录"按钮 - 添加过渡效果
+        newTocToggleBtn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        newTocToggleBtn.style.transform = 'translateX(20px)';
         newTocToggleBtn.style.opacity = '0';
-        newTocToggleBtn.style.visibility = 'hidden';
+        
+        // 延迟设置visibility以允许动画完成
+        setTimeout(() => {
+          newTocToggleBtn.style.visibility = 'hidden';
+        }, 300);
+        
         console.log('设置显示目录按钮不可见');
       } else {
         // 如果目录可见，则隐藏它
@@ -643,18 +665,32 @@ function setupTocToggle(rightToc) {
         rightToc.setAttribute('data-visible', 'false');
         rightToc.classList.add('collapsed');
         
+        // 设置过渡属性
+        rightToc.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        
         // 使用内联样式确保隐藏 - 只更改影响可见性的属性
         rightToc.style.transform = 'translateX(calc(100% + 20px))';
         rightToc.style.opacity = '0';
-        rightToc.style.visibility = 'hidden';
+        
+        // 延迟设置visibility以允许动画完成
+        setTimeout(() => {
+          rightToc.style.visibility = 'hidden';
+        }, 300);
         
         page.classList.add('expanded');
         newTocToggleBtn.classList.remove('active');
         localStorage.setItem('tocCollapsed', 'true');
         
-        // 显示"显示目录"按钮 - 确保能够覆盖之前的样式
-        newTocToggleBtn.style.opacity = '1';
+        // 显示"显示目录"按钮 - 确保能够覆盖之前的样式，添加过渡效果
+        newTocToggleBtn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         newTocToggleBtn.style.visibility = 'visible';
+        
+        // 延迟设置transform和opacity以创建动画效果
+        setTimeout(() => {
+          newTocToggleBtn.style.transform = 'translateX(0)';
+          newTocToggleBtn.style.opacity = '1';
+        }, 10);
+        
         console.log('设置显示目录按钮可见，当前样式: opacity=' + newTocToggleBtn.style.opacity + ', visibility=' + newTocToggleBtn.style.visibility);
       }
       

@@ -98,7 +98,7 @@ DeepChat支持多种操作系统平台：
 }
 
 .feature-container {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 

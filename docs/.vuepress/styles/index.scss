@@ -10,7 +10,7 @@
   --c-text-lightest: #6a8bad;
 
   // 自定义变量
-  --content-width: 740px;
+  --content-width: 100%;
   --sidebar-width: 260px;
   --rightbar-width: 240px;
   --navbar-height: 3.6rem;
@@ -180,19 +180,19 @@ a.router-link-active {
   width: var(--rightbar-width);
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
-  background: #f8f9fa;
+  background: #fff;
   padding: 2rem 1rem;
   box-sizing: border-box;
   font-size: 14px;
   border-left: 1px solid #eaecef;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
-  transform: translateX(0) !important; /* 默认状态可见，使用!important确保优先级 */
+  transform: translateX(0); /* 默认状态可见 */
   opacity: 1;
   visibility: visible;
 
   &.collapsed {
-    transform: translateX(100%) !important; /* 折叠状态，使用!important确保优先级 */
+    transform: translateX(calc(100% + 20px)); /* 折叠状态 */
     opacity: 0;
     visibility: hidden;
   }
@@ -493,7 +493,7 @@ div[class*="language-"] {
   position: fixed;
   z-index: 1000;
   right: 20px;
-  bottom: 80px;
+  top: 80px; // 调整到与目录相同高度
   padding: 8px 16px;
   background: rgb(79, 70, 229);
   color: white;
@@ -506,7 +506,7 @@ div[class*="language-"] {
   font-size: 14px;
   font-weight: bold;
   user-select: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &:hover {
     background: rgb(99, 90, 249);
@@ -516,17 +516,19 @@ div[class*="language-"] {
   &.active {
     opacity: 0;
     visibility: hidden;
+    transform: translateX(20px);
   }
   
   &:not(.active) {
     opacity: 1;
     visibility: visible;
+    transform: translateX(0);
   }
 }
 
 // 添加页面过渡效果
 .page {
-  transition: padding-right 0.3s ease-in-out;
+  transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &.expanded {
     padding-right: 0;

@@ -159,7 +159,7 @@ DeepChat高度重视用户数据安全：
 }
 
 .architecture-container {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
