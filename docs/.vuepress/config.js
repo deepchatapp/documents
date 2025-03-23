@@ -8,7 +8,10 @@ module.exports = {
   themeConfig: {
     logo: 'https://deepchat.thinkinai.xyz/logo.png',
     nav: [
-      { text: '官网', link: 'https://deepchat.thinkinai.xyz/' }
+      // 使用指南入口
+      { text: '使用指南', link: '/guide/user-guide/' },
+      // 官网入口 
+      { text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
     ],
     sidebar: [
       {
@@ -21,7 +24,7 @@ module.exports = {
         title: '快速开始',
         path: '/guide/getting-started/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         children: [
           '/guide/getting-started/',
           '/guide/getting-started/installation',
@@ -33,7 +36,7 @@ module.exports = {
         title: '使用指南',
         path: '/guide/user-guide/',
         collapsable: true,
-        sidebarDepth: 2,
+        sidebarDepth: 0,
         children: [
           '/guide/user-guide/',
           '/guide/user-guide/model-configuration',
@@ -54,6 +57,14 @@ module.exports = {
     displayAllHeaders: false,
     // 搜索设置
     search: true,
-    searchMaxSuggestions: 10
+    searchMaxSuggestions: 10,
+    // 启用页面右侧的标题导航
+    activeHeaderLinks: true,
+    // 显示所有页面的标题链接
+    displayAllHeaders: false,
+    // 页面滚动时自动激活侧边栏链接
+    sidebarDepth: 3,
+    // 右侧目录标题
+    rightSidebarLabel: '目录'
   }
 } 
