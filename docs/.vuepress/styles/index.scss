@@ -14,6 +14,58 @@
   --sidebar-width: 300px;
 }
 
+// 全局链接颜色
+a {
+  color: var(--c-brand);
+  
+  &:hover {
+    color: var(--c-brand-light);
+  }
+}
+
+// 活动链接颜色（侧边栏等）
+.active, 
+a.sidebar-link.active,
+a.router-link-active {
+  color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+}
+
+// 按钮颜色
+.action .action-button.primary {
+  background-color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+  
+  &:hover {
+    background-color: var(--c-brand-light) !important;
+    border-color: var(--c-brand-light) !important;
+  }
+}
+
+// 侧边栏活动项目
+.sidebar-link.active {
+  border-left-color: var(--c-brand);
+  color: var(--c-brand);
+}
+
+// 主页特性卡片图标
+.features .feature h2::before {
+  color: var(--c-brand);
+}
+
+// 导航栏链接
+.nav-links a:hover, 
+.nav-links a.router-link-active {
+  color: var(--c-brand);
+  border-bottom-color: var(--c-brand);
+}
+
+// 搜索框高亮
+.search-box .suggestion a:hover,
+.search-box .suggestion.focused a {
+  color: var(--c-brand);
+}
+
 // 左右布局相关样式
 .theme-container {
   display: flex;
@@ -32,6 +84,20 @@
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   overflow-y: auto;
+  
+  // 侧边栏链接
+  .sidebar-links {
+    a.sidebar-link {
+      &:hover {
+        color: var(--c-brand);
+      }
+      
+      &.active {
+        color: var(--c-brand);
+        border-left-color: var(--c-brand);
+      }
+    }
+  }
 }
 
 .navbar {
@@ -64,6 +130,22 @@
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 5rem 2.5rem 2rem;
+  
+  // 内容中的链接
+  a {
+    color: var(--c-brand);
+    
+    &:hover {
+      color: var(--c-brand-light);
+    }
+  }
+  
+  // 内容中的标题
+  h1, h2, h3, h4, h5, h6 {
+    a.header-anchor {
+      color: var(--c-brand);
+    }
+  }
 }
 
 // 移动端响应式调整
@@ -125,4 +207,44 @@ div[class*="language-"] {
   .theme-default-content {
     padding: 1rem;
   }
+}
+
+// 侧边栏加强样式 - 必须确保高优先级
+.sidebar-group.is-active > .sidebar-heading:not(.clickable) {
+  color: var(--c-brand) !important;
+  border-left-color: var(--c-brand) !important;
+}
+
+.sidebar-link.active {
+  color: var(--c-brand) !important;
+  border-left-color: var(--c-brand) !important;
+}
+
+// 自定义活动项样式 - 特别针对截图中指出的问题
+.sidebar-sub-headers a.sidebar-link.active {
+  color: var(--c-brand) !important;
+  font-weight: 600;
+  border-left: 0.25rem solid var(--c-brand) !important;
+}
+
+// 侧边栏组标题
+.sidebar-group a.sidebar-link {
+  &:hover, &.active {
+    color: var(--c-brand) !important;
+  }
+}
+
+// 按钮样式
+.action-button.primary {
+  background-color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+  
+  &:hover {
+    background-color: var(--c-brand-light) !important;
+  }
+}
+
+// 额外的链接样式
+a.sidebar-link:hover {
+  color: var(--c-brand) !important;
 } 

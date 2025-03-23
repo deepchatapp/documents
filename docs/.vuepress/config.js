@@ -18,6 +18,7 @@ module.exports = {
         {
           title: '快速开始',
           collapsable: false,
+          sidebarDepth: 2,
           children: [
             '',
             'installation',
@@ -30,6 +31,7 @@ module.exports = {
         {
           title: '使用指南',
           collapsable: false,
+          sidebarDepth: 2,
           children: [
             '',
             'model-configuration',
@@ -40,6 +42,14 @@ module.exports = {
           ]
         }
       ]
-    }
+    },
+    // 平滑滚动
+    smoothScroll: true,
+    // 最后更新时间
+    lastUpdated: '上次更新',
+    // 显示编辑链接
+    editLinks: false,
+    // 默认展开所有侧边栏组
+    displayAllHeaders: false
   }
 } 
