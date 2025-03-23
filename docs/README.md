@@ -2,11 +2,11 @@
 home: true
 heroImage: https://deepchat.thinkinai.xyz/logo.png
 actions:
+  - text: 产品介绍
+    link: /guide/introduction/
+    type: primary
   - text: 快速开始
     link: /guide/getting-started/
-    type: primary
-  - text: 使用指南
-    link: /guide/user-guide/
     type: secondary
 features:
   - title: 强大的对话能力
@@ -24,19 +24,12 @@ features:
 footer: Copyright © 2023-present DeepChat
 ---
 
-# DeepChat 文档
+## 欢迎使用 DeepChat
 
-欢迎使用DeepChat官方文档！本文档将帮助你了解如何安装、配置和使用DeepChat，充分发挥其强大功能。
+DeepChat是一款基于大型语言模型的强大AI聊天应用。通过本文档，您可以了解DeepChat的各项功能和使用方法。
 
-## 什么是DeepChat？
+开始探索DeepChat的精彩世界：
 
-DeepChat是一款功能强大的AI聊天应用，基于先进的大型语言模型，提供流畅自然的对话体验。无论是日常聊天、知识问答，还是处理文档、生成代码，DeepChat都能满足你的各种需求。
-
-## 主要功能
-
-- **多模型支持**：兼容多种大型语言模型，满足不同场景需求
-- **文档处理**：上传不同格式的文档，进行智能问答
-- **Artifacts**：实时交互与预览生成内容，支持多格式内容展示
-- **MCP配置**：灵活控制大模型的行为与输出
-- **多平台兼容**：支持Windows、Mac和Linux系统
-- **知识库**：（开发中）构建和管理专属知识库 
+- [产品介绍](/guide/introduction/) - 了解DeepChat的基本概念和特性
+- [快速开始](/guide/getting-started/) - 快速安装和配置DeepChat
+- [使用指南](/guide/user-guide/) - 详细了解DeepChat的各项功能 

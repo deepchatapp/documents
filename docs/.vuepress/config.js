@@ -16,15 +16,20 @@ module.exports = {
     sidebar: [
       {
         title: 'DeepChat介绍',
-        path: '/',
+        path: '/guide/introduction/',
         collapsable: true,
-        sidebarDepth: 0
+        sidebarDepth: 0,
+        children: [
+          '/guide/introduction/',
+          '/guide/introduction/features',
+          '/guide/introduction/architecture',
+        ]
       },
       {
         title: '快速开始',
         path: '/guide/getting-started/',
         collapsable: true,
-        sidebarDepth: 1,
+        sidebarDepth: 0,
         children: [
           '/guide/getting-started/',
           '/guide/getting-started/installation',
@@ -63,7 +68,7 @@ module.exports = {
     // 显示所有页面的标题链接
     displayAllHeaders: false,
     // 页面滚动时自动激活侧边栏链接
-    sidebarDepth: 3,
+    sidebarDepth: 0,
     // 右侧目录标题
     rightSidebarLabel: '目录'
   }
