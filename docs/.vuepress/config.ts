@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
-import { webpackBundler } from '@vuepress/bundler-webpack'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -9,8 +9,8 @@ export default defineUserConfig({
   head: [
     ['link', { rel: 'icon', href: 'https://deepchat.thinkinai.xyz/logo.png' }]
   ],
-  // 指定webpack bundler
-  bundler: webpackBundler(),
+  // 指定vite bundler
+  bundler: viteBundler(),
   // 使用reco主题
   theme: recoTheme({
     logo: 'https://deepchat.thinkinai.xyz/logo.png',
