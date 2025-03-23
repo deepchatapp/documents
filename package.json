@@ -1,0 +1,26 @@
+{
+  "name": "deepchat-documents",
+  "version": "1.0.0",
+  "description": "DeepChat官方文档",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erixyuan/deepchat-documents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erixyuan/deepchat-documents/issues"
+  },
+  "homepage": "https://github.com/erixyuan/deepchat-documents#readme",
+  "devDependencies": {
+    "@vuepress/theme-default": "^1.9.10",
+    "vuepress": "^1.9.10"
+  }
+}

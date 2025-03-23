@@ -1,0 +1,51 @@
+:root {
+  // 主题颜色
+  --c-brand: #3eaf7c;
+  --c-brand-light: #4abf8a;
+  
+  // 文本颜色
+  --c-text: #2c3e50;
+  --c-text-light: #3a5169;
+  --c-text-lighter: #4e6e8e;
+  --c-text-lightest: #6a8bad;
+
+  // 自定义变量
+  --content-width: 840px;
+}
+
+// 警告信息样式
+.custom-warning {
+  background-color: rgba(255, 229, 100, 0.3);
+  border-left: 4px solid #e7c000;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+// 特性卡片样式增强
+.features {
+  .feature {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// 代码块样式调整
+div[class*="language-"] {
+  border-radius: 6px;
+  
+  pre, pre[class*="language-"] {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+// 响应式调整
+@media (max-width: 419px) {
+  .theme-default-content {
+    padding: 1rem;
+  }
+} 
