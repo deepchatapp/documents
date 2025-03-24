@@ -1,0 +1,536 @@
+:root {
+  // 主题颜色
+  --c-brand: rgb(79, 70, 229);
+  --c-brand-light: rgb(99, 90, 249);
+  
+  // 文本颜色
+  --c-text: #2c3e50;
+  --c-text-light: #3a5169;
+  --c-text-lighter: #4e6e8e;
+  --c-text-lightest: #6a8bad;
+
+  // 自定义变量
+  --content-width: 100%;
+  --sidebar-width: 260px;
+  --rightbar-width: 240px;
+  --navbar-height: 3.6rem;
+}
+
+// 全局链接颜色
+a {
+  color: var(--c-brand);
+  
+  &:hover {
+    color: var(--c-brand-light);
+  }
+}
+
+// 活动链接颜色（侧边栏等）
+.active, 
+a.sidebar-link.active,
+a.router-link-active {
+  color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+}
+
+// 按钮颜色
+.action .action-button.primary {
+  background-color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+  
+  &:hover {
+    background-color: var(--c-brand-light) !important;
+    border-color: var(--c-brand-light) !important;
+  }
+}
+
+// 整体布局 - 三栏结构
+.theme-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+// 左侧侧边栏
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: var(--sidebar-width);
+  margin: 0;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  padding-top: var(--navbar-height);
+  
+  // 侧边栏链接
+  .sidebar-links {
+    a.sidebar-link {
+      &:hover {
+        color: var(--c-brand);
+      }
+      
+      &.active {
+        color: var(--c-brand);
+        border-left-color: var(--c-brand);
+      }
+    }
+  }
+  
+  .sidebar-group {
+    background-color: transparent;
+    margin-bottom: 0.75rem;
+    
+    .sidebar-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      margin: 0;
+      transition: all 0.2s;
+      border-left: 0.25rem solid transparent;
+      
+      &:hover {
+        color: var(--c-brand);
+      }
+      
+      &.active {
+        border-left-color: var(--c-brand);
+        color: var(--c-brand);
+      }
+    }
+    
+    .sidebar-group-items {
+      padding-left: 1rem;
+    }
+  }
+  
+  .sidebar-link {
+    padding: 0.5rem 1.5rem 0.5rem 1.75rem;
+    border-left: 0.25rem solid transparent;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    
+    &:hover {
+      color: var(--c-brand);
+    }
+    
+    &.active {
+      border-left-color: var(--c-brand);
+      color: var(--c-brand);
+      font-weight: 600;
+    }
+  }
+}
+
+// 顶部导航栏
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  background-color: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eaecef;
+  padding-left: calc(var(--sidebar-width) + 1.5rem);
+  
+  .home-link {
+    margin-right: auto;
+  }
+  
+  .nav-links {
+    .nav-item {
+      margin-left: 1.5rem;
+      
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  .search-box {
+    margin-right: 1rem;
+  }
+}
+
+// 中间内容区域
+.page {
+  padding-top: var(--navbar-height);
+  padding-right: var(--rightbar-width);
+  box-sizing: border-box;
+  width: 100%;
+  
+  .theme-default-content {
+    max-width: 660px !important;
+    padding: 2rem 2.5rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+// 右侧目录
+.right-toc {
+  position: fixed;
+  z-index: 100;
+  top: var(--navbar-height);
+  right: 0;
+  width: var(--rightbar-width);
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  background: #fff;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-left: 1px solid #eaecef;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+  transform: translateX(0); /* 默认状态可见 */
+  opacity: 1;
+  visibility: visible;
+
+  &.collapsed {
+    transform: translateX(calc(100% + 20px)); /* 折叠状态 */
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eaecef;
+    color: var(--c-text);
+  }
+}
+
+// 移动端遮罩
+.sidebar-mask {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+// 内容区域标题
+.theme-default-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 24px !important;
+    margin-bottom: 16px !important;
+    font-weight: 600 !important;
+    position: relative !important;
+    
+    &:before {
+      content: "";
+      display: block;
+      height: 80px;
+      margin-top: -80px;
+      visibility: hidden;
+      position: relative;
+      z-index: -1;
+    }
+  }
+}
+
+// 移动端响应式调整
+@media (max-width: 959px) {
+  .right-toc {
+    display: none;
+  }
+  
+  .page {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 719px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .page {
+    padding-left: 0;
+  }
+
+  .navbar {
+    padding-left: 1.5rem;
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-open .sidebar-mask {
+    display: block;
+  }
+}
+
+// 移动端内容区域调整
+@media (max-width: 419px) {
+  .theme-default-content {
+    padding: 1rem;
+  }
+}
+
+// 侧边栏加强样式 - 必须确保高优先级
+.sidebar-group.is-active > .sidebar-heading:not(.clickable) {
+  color: var(--c-brand) !important;
+  border-left-color: var(--c-brand) !important;
+}
+
+.sidebar-link.active {
+  color: var(--c-brand) !important;
+  border-left-color: var(--c-brand) !important;
+}
+
+// 自定义活动项样式
+.sidebar-sub-headers a.sidebar-link.active {
+  color: var(--c-brand) !important;
+  font-weight: 600;
+  border-left: 0.25rem solid var(--c-brand) !important;
+}
+
+// 侧边栏组标题
+.sidebar-group a.sidebar-link {
+  &:hover, &.active {
+    color: var(--c-brand) !important;
+  }
+}
+
+// 按钮样式
+.action-button.primary {
+  background-color: var(--c-brand) !important;
+  border-color: var(--c-brand) !important;
+  
+  &:hover {
+    background-color: var(--c-brand-light) !important;
+  }
+}
+
+// 额外的链接样式
+a.sidebar-link:hover {
+  color: var(--c-brand) !important;
+}
+
+// 侧边栏折叠按钮样式
+.sidebar-heading {
+  position: relative;
+  cursor: pointer;
+  
+  .arrow {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    transition: transform 0.2s;
+    
+    &.down {
+      transform: rotate(90deg);
+    }
+  }
+  
+  &.active {
+    color: var(--c-brand) !important;
+    border-left-color: var(--c-brand) !important;
+  }
+}
+
+// 侧边栏分组样式
+.sidebar-group {
+  margin-bottom: 0.5rem;
+  
+  .sidebar-group-items {
+    padding-left: 0.5rem;
+  }
+}
+
+// 确保侧边栏组标题始终使用主题色
+.sidebar-heading.active {
+  color: var(--c-brand) !important;
+}
+
+// 搜索框样式优化
+.search-box {
+  input {
+    border-radius: 4px;
+    background-color: #f3f4f5;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    
+    &:focus {
+      background-color: #fff;
+      border-color: var(--c-brand);
+      box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+    }
+  }
+  
+  .suggestions {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .suggestion {
+      &.focused {
+        background-color: rgba(79, 70, 229, 0.08);
+      }
+      
+      a {
+        color: var(--c-text);
+        
+        .page-title {
+          color: var(--c-brand);
+        }
+      }
+    }
+  }
+}
+
+// 阅读进度条
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background: var(--c-brand);
+  z-index: 999;
+  transition: width 0.1s ease;
+}
+
+// 解决在某些浏览器中可能出现的滚动问题
+html, body {
+  scroll-padding-top: 70px;
+}
+
+// 隐藏VuePress默认的目录
+.table-of-contents {
+  display: none !important;
+}
+
+// 警告信息样式
+.custom-warning {
+  background-color: rgba(255, 229, 100, 0.3);
+  border-left: 4px solid #e7c000;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+// 特性卡片样式增强
+.features {
+  .feature {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// 代码块样式调整
+div[class*="language-"] {
+  border-radius: 6px;
+  
+  pre, pre[class*="language-"] {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+// 响应式调整
+@media (max-width: 1300px) {
+  .page {
+    padding-right: 0;
+    
+    .table-of-contents {
+      display: none;
+    }
+  }
+}
+
+// 调整页面边距以容纳右侧目录
+.theme-container .theme-default-content:not(.custom) {
+  max-width: calc(var(--content-width) - 240px);
+  margin-right: 240px;
+  
+  @media (max-width: 959px) {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+// 修改内容区域样式，为右侧目录留出空间
+@media (min-width: 960px) {
+  .theme-default-content:not(.custom) {
+    max-width: calc(var(--content-width) - 280px) !important;
+    margin-right: 280px !important;
+  }
+}
+
+// 强制覆盖默认主题的padding-left
+.theme-default-content {
+  padding-left: 0 !important;
+}
+
+.page {
+  padding-left: 0 !important;
+}
+
+.theme-container {
+  .page {
+    padding-left: 0 !important;
+  }
+} 
+
+// 显示目录按钮样式
+.toc-toggle-btn {
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  top: 80px; // 调整到与目录相同高度
+  padding: 8px 16px;
+  background: rgb(79, 70, 229);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background: rgb(99, 90, 249);
+    transform: scale(1.05);
+  }
+  
+  &.active {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+  }
+  
+  &:not(.active) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+// 添加页面过渡效果
+.page {
+  transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.expanded {
+    padding-right: 0;
+  }
+} 
