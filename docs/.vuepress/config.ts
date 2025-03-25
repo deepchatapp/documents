@@ -23,6 +23,14 @@ export default defineUserConfig({
       { text: 'DeepChat介绍', link: '/guide/introduction/' },
       // 快速开始入口
       { text: '快速开始', link: '/guide/getting-started/' },
+      // 核心功能入口
+      { text: '核心功能', link: '/guide/core-features/' },
+      // 高级功能入口
+      { text: '高级功能', link: '/guide/advanced-features/' },
+      // 模型集成入口
+      { text: '模型集成', link: '/guide/model-integration/' },
+      // 使用技巧入口
+      { text: '使用技巧', link: '/guide/tips/' },
       // 使用指南入口
       { text: '使用指南', link: '/guide/user-guide/' },
       // 官网入口 
@@ -47,6 +55,56 @@ export default defineUserConfig({
             '/guide/getting-started/installation',
             '/guide/getting-started/initial-setup',
             '/guide/getting-started/first-conversation',
+          ]
+        }
+      ],
+      '/guide/core-features/': [
+        {
+          text: '核心功能',
+          children: [
+            '/guide/core-features/',
+            '/guide/core-features/conversation',
+            '/guide/core-features/model-config',
+            '/guide/core-features/prompt-engineering',
+            '/guide/core-features/history',
+            '/guide/core-features/export',
+          ]
+        }
+      ],
+      '/guide/advanced-features/': [
+        {
+          text: '高级功能',
+          children: [
+            '/guide/advanced-features/',
+            '/guide/advanced-features/custom-settings',
+            '/guide/advanced-features/shortcuts',
+            '/guide/advanced-features/themes',
+            '/guide/advanced-features/data-management',
+            '/guide/advanced-features/languages',
+          ]
+        }
+      ],
+      '/guide/model-integration/': [
+        {
+          text: '模型集成',
+          children: [
+            '/guide/model-integration/',
+            '/guide/model-integration/supported-models',
+            '/guide/model-integration/config-guide',
+            '/guide/model-integration/api-keys',
+            '/guide/model-integration/performance',
+          ]
+        }
+      ],
+      '/guide/tips/': [
+        {
+          text: '使用技巧',
+          children: [
+            '/guide/tips/',
+            '/guide/tips/best-practices',
+            '/guide/tips/faq',
+            '/guide/tips/optimization',
+            '/guide/tips/security',
           ]
         }
       ],

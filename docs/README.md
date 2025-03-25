@@ -10,8 +10,8 @@ bannerBrand:
   description: 企业级智能对话平台
   tagline: 支持多种大语言模型接入、文档处理与知识库集成的企业级AI对话平台
   buttons:
-    - { text: '快速开始', link: '/guide/getting-started/', type: 'primary' }
-    - { text: '了解更多', link: '/guide/introduction/' }
+    - { text: '快速开始', link: './guide/getting-started/', type: 'primary' }
+    - { text: '了解更多', link: './guide/introduction/' }
   socialLinks:
     - { icon: 'LogoGithub', link: 'https://github.com/yourusername/deepchat' }
 footer: MIT Licensed | Copyright © 2023-present DeepChat

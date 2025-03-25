@@ -2,153 +2,125 @@
 pageClass: architecture-page
 ---
 
-# DeepChat 架构设计
+# 技术架构
 
-<div class="architecture-container">
+DeepChat 采用现代化的软件架构设计，确保系统的稳定性、可扩展性和优秀的用户体验。本页面介绍 DeepChat 的整体架构和关键组件。
 
-DeepChat采用现代化的软件架构设计，确保系统的稳定性、可扩展性和用户体验。下面介绍DeepChat的整体架构和关键组件。
+## 系统架构概览 <Badge text="系统设计" type="tip"/>
 
-## 整体架构 <Badge text="系统设计" type="tip"/>
+DeepChat 采用客户端-服务器架构，主要由以下几个部分组成：
 
-<div class="architecture-diagram">
-  <img src="https://via.placeholder.com/800x400?text=DeepChat架构图" alt="DeepChat架构图" class="arch-img" />
-</div>
+- **前端界面**：基于 Electron 和现代 Web 技术构建的跨平台桌面应用
+- **本地服务**：处理用户请求、模型调用、文档处理等核心功能
+- **模型接口层**：连接各种大语言模型的统一接口
+- **插件系统**：提供功能扩展能力
+- **存储层**：管理对话历史、用户设置和知识库数据
 
-DeepChat采用客户端-服务器架构设计，主要由以下几个部分组成：
+系统架构图：
 
-<div class="arch-component-grid">
-  <div class="arch-component">
-    <div class="comp-title">前端界面</div>
-    <div class="comp-desc">基于Electron构建的跨平台桌面应用</div>
-  </div>
-  <div class="arch-component">
-    <div class="comp-title">后端服务</div>
-    <div class="comp-desc">处理用户请求、模型调用和系统管理</div>
-  </div>
-  <div class="arch-component">
-    <div class="comp-title">模型接口</div>
-    <div class="comp-desc">连接各种大语言模型的统一接口</div>
-  </div>
-  <div class="arch-component">
-    <div class="comp-title">插件系统</div>
-    <div class="comp-desc">提供功能扩展能力</div>
-  </div>
-  <div class="arch-component">
-    <div class="comp-title">存储层</div>
-    <div class="comp-desc">管理对话历史、用户设置和知识库数据</div>
-  </div>
-</div>
+![DeepChat架构图](https://deepchat.thinkinai.xyz/chat-screenshot.png)
 
 ## 前端技术栈 <Badge text="技术选型" type="warning"/>
 
-DeepChat前端采用现代Web技术栈开发：
+DeepChat 前端采用现代 Web 技术栈开发：
 
-<div class="tech-stack">
-  <div class="tech-item">
-    <div class="tech-logo">⚡</div>
-    <div class="tech-name">Electron</div>
-    <div class="tech-desc">跨平台桌面应用框架</div>
-  </div>
-  <div class="tech-item">
-    <div class="tech-logo">🖖</div>
-    <div class="tech-name">Vue.js</div>
-    <div class="tech-desc">响应式前端框架</div>
-  </div>
-  <div class="tech-item">
-    <div class="tech-logo">🎨</div>
-    <div class="tech-name">Tailwind CSS</div>
-    <div class="tech-desc">实用优先的CSS框架</div>
-  </div>
-  <div class="tech-item">
-    <div class="tech-logo">📝</div>
-    <div class="tech-name">Monaco Editor</div>
-    <div class="tech-desc">代码编辑器组件</div>
-  </div>
-  <div class="tech-item">
-    <div class="tech-logo">📊</div>
-    <div class="tech-name">ECharts</div>
-    <div class="tech-desc">数据可视化图表库</div>
-  </div>
-</div>
+- **Electron**：跨平台桌面应用框架，确保 Windows、macOS 和 Linux 平台的一致体验
+- **Vue.js**：响应式前端框架，提供高效的组件化开发体验
+- **Tailwind CSS**：实用优先的 CSS 框架，确保界面美观且易于维护
+- **Monaco Editor**：强大的代码编辑器组件，提供代码高亮和智能提示
+- **ECharts**：数据可视化图表库，支持多种图表类型
+
+前端架构采用组件化设计，将不同功能模块解耦，便于维护和扩展。界面设计遵循现代设计原则，注重用户体验和可访问性。
 
 ## 后端技术栈 <Badge text="服务构建" type="warning"/>
 
 后端服务采用高性能的技术组件：
 
-- **Node.js**：主要运行环境
-- **Express**：Web服务框架
-- **WebSocket**：实时通信
-- **SQLite**：本地数据存储
-- **文档处理库**：支持多种格式文档的解析
+- **Node.js**：主要运行环境，提供高效的异步 I/O 能力
+- **Express**：轻量级 Web 服务框架，处理 API 请求
+- **WebSocket**：实现客户端和服务器之间的实时双向通信
+- **SQLite**：嵌入式数据库，用于本地数据存储
+- **文档处理库**：支持 PDF、Word、Excel 等多种格式文档的解析
 
-## 模型调用流程 <Badge text="核心流程" type="tip"/>
+后端服务作为本地服务运行，避免了网络延迟，同时保护用户数据隐私。
 
-<div class="process-flow">
-  <div class="process-step">
-    <div class="step-number">1</div>
-    <div class="step-desc">
-      <strong>用户输入</strong>：用户在界面输入消息或上传文档
-    </div>
-  </div>
-  <div class="process-step">
-    <div class="step-number">2</div>
-    <div class="step-desc">
-      <strong>请求处理</strong>：前端将请求发送到后端服务
-    </div>
-  </div>
-  <div class="process-step">
-    <div class="step-number">3</div>
-    <div class="step-desc">
-      <strong>上下文构建</strong>：系统构建完整的对话上下文
-    </div>
-  </div>
-  <div class="process-step">
-    <div class="step-number">4</div>
-    <div class="step-desc">
-      <strong>模型调用</strong>：通过统一接口调用选定的大语言模型
-    </div>
-  </div>
-  <div class="process-step">
-    <div class="step-number">5</div>
-    <div class="step-desc">
-      <strong>响应处理</strong>：处理模型返回的结果
-    </div>
-  </div>
-  <div class="process-step">
-    <div class="step-number">6</div>
-    <div class="step-desc">
-      <strong>内容渲染</strong>：将结果渲染到用户界面
-    </div>
-  </div>
-</div>
+## 模型集成架构 <Badge text="核心功能" type="tip"/>
+
+DeepChat 的模型集成架构是系统的核心，它提供了统一的接口连接不同的大语言模型：
+
+- **模型抽象层**：定义统一的模型接口，屏蔽不同模型 API 的差异
+- **适配器模式**：为每种模型提供专用适配器，处理特定模型的请求格式和响应解析
+- **参数映射**：将通用参数映射到特定模型的参数体系
+- **流式传输**：支持模型响应的流式传输，提供实时反馈
+- **错误处理**：统一的错误处理机制，提高系统稳定性
+
+这种架构设计使得 DeepChat 可以轻松集成新的模型，并为用户提供一致的使用体验。
+
+## 数据流程 <Badge text="核心流程" type="tip"/>
+
+典型的用户请求在 DeepChat 中的处理流程：
+
+1. **用户输入**：用户在界面输入消息或上传文档
+2. **前端处理**：前端组件进行初步处理，如UI更新和本地缓存
+3. **请求传递**：请求通过 IPC 通道传递到本地服务
+4. **上下文构建**：系统根据对话历史构建完整的上下文
+5. **模型调用**：通过适配器调用选定的大语言模型
+6. **流式响应**：模型生成的响应实时传回前端
+7. **内容渲染**：前端进行格式化和特殊内容（如代码、表格）的渲染
+8. **状态更新**：更新对话历史和相关状态
+
+整个流程优化了响应速度和用户体验，特别是通过流式传输提供即时反馈。
 
 ## 插件系统 <Badge text="扩展能力" type="tip"/>
 
-DeepChat设计了模块化的插件系统，支持功能扩展：
+DeepChat 设计了模块化的插件系统，支持功能扩展：
 
-- **核心API**：提供插件开发的基础API
-- **事件机制**：基于发布-订阅模式的事件系统
+- **核心API**：提供插件开发的基础 API 和接口
+- **事件机制**：基于发布-订阅模式的事件系统，允许插件监听和触发事件
+- **生命周期钩子**：插件可以在不同阶段执行自定义逻辑
+- **配置系统**：支持插件的自定义配置
 - **插件市场**：发现和安装社区开发的插件
+
+插件系统使得 DeepChat 可以根据用户需求不断扩展功能，同时保持核心系统的简洁和稳定。
 
 ## 安全性设计 <Badge text="安全保障" type="danger"/>
 
-DeepChat高度重视用户数据安全：
+DeepChat 高度重视用户数据安全：
 
-- **本地存储**：对话数据默认存储在本地
-- **加密传输**：与模型服务的通信采用加密传输
-- **权限控制**：严格的API权限控制
-- **沙箱机制**：第三方插件在沙箱环境中运行
+- **本地优先**：对话数据和文档默认存储在本地，不经用户许可不会上传到云端
+- **加密传输**：与模型服务的通信采用加密传输，保护数据安全
+- **权限控制**：严格的 API 权限控制，防止未授权访问
+- **沙箱机制**：第三方插件在沙箱环境中运行，限制访问范围
+- **隐私保护**：用户可以选择性地删除历史记录和上传的文档
+
+安全性设计贯穿整个系统架构，确保用户数据的安全和隐私。
 
 ## 可扩展性 <Badge text="未来规划" type="warning"/>
 
-系统设计考虑了未来的扩展需求：
+DeepChat 的架构设计考虑了未来的扩展需求：
 
-- **多模型支持**：统一的模型接口，便于接入新模型
-- **多语言支持**：国际化框架，支持多语言界面
-- **主题定制**：可定制的UI主题系统
-- **功能模块**：模块化设计，支持功能的灵活组合
+- **多模型支持**：统一的模型接口便于接入新的大语言模型
+- **多语言支持**：国际化框架支持添加新的语言包
+- **主题定制**：可定制的 UI 主题系统，支持深色模式和自定义主题
+- **功能模块**：模块化设计允许功能的灵活组合和定制
+- **API扩展**：预留了 API 扩展点，便于添加新功能
 
-</div>
+这种前瞻性设计确保 DeepChat 可以随着技术发展和用户需求不断进化。
+
+## 部署选项 <Badge text="部署方式" type="tip"/>
+
+DeepChat 支持多种部署方式，满足不同场景需求：
+
+- **桌面应用**：标准部署方式，适合个人用户
+- **私有部署**：企业可以在内部网络部署 DeepChat 服务
+- **云服务集成**：支持与云服务集成，提供更强大的计算能力
+- **混合模式**：结合本地处理和云服务的优势
+
+不同的部署方式为用户提供了灵活选择，平衡便捷性、性能和数据控制。
+
+通过这些架构设计，DeepChat 实现了高性能、可扩展性和优秀用户体验的平衡，为用户提供强大而灵活的 AI 对话平台。
+
+下一步，您可以[快速开始](../getting-started/)使用 DeepChat，或了解其[核心功能](../core-features/)。
 
 <style>
 .architecture-page {
