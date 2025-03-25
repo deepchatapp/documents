@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+# 添加权限设置
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -22,8 +26,22 @@ jobs:
       - name: Install Dependencies
         run: npm install
         
+      - name: Debug Environment
+        run: |
+          echo "Node version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+          echo "Directory structure:"
+          ls -la
+          echo "Package.json:"
+          cat package.json
+          echo "Docs structure:"
+          ls -la docs/
+          
       - name: Build
-        run: npm run docs:build
+        run: npm run docs:build --debug
+        
+      - name: Create .nojekyll file
+        run: touch docs/.vuepress/dist/.nojekyll
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
