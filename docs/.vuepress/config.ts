@@ -6,6 +6,8 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'DeepChat',
   description: 'DeepChat官方文档',
+  // 添加base路径配置，对应GitHub Pages项目站点的子路径
+  base: '/documents/',
   head: [
     ['link', { rel: 'icon', href: 'https://deepchat.thinkinai.xyz/logo.png' }]
   ],
