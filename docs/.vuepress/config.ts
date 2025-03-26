@@ -19,27 +19,34 @@ export default defineUserConfig({
     author: 'DeepChat',
     authorAvatar: 'https://deepchat.thinkinai.xyz/logo.png',
     navbar: [
-      // DeepChat介绍入口
-      { text: 'DeepChat介绍', link: '/guide/introduction/' },
-      // 快速开始入口
+      // 1. 项目简介入口
+      { icon: 'IconDocument',text: '项目简介', link: '/guide/introduction/' },
+      // 2. 快速开始入口
       { text: '快速开始', link: '/guide/getting-started/' },
-      // 核心功能入口
-      { text: '核心功能', link: '/guide/core-features/' },
-      // 高级功能入口
-      { text: '高级功能', link: '/guide/advanced-features/' },
-      // 模型集成入口
-      { text: '模型集成', link: '/guide/model-integration/' },
-      // 使用技巧入口
+      // 3. 功能介绍（父分组，合并核心功能、高级功能和模型集成）
+      {
+        text: '功能介绍',
+        children: [
+          { text: '核心功能', link: '/guide/core-features/' },
+          { text: '高级功能', link: '/guide/advanced-features/' },
+          { text: '模型集成', link: '/guide/model-integration/' }
+        ]
+      },
+      // 4. 使用技巧入口
       { text: '使用技巧', link: '/guide/tips/' },
-      // 故障排除入口
+      // 5. 故障排除入口
       { text: '故障排除', link: '/guide/troubleshooting/' },
-      // 更新与维护入口
-      { text: '更新与维护', link: '/guide/maintenance/' },
-      // 社区支持入口
-      { text: '社区支持', link: '/guide/community/' },
-      // 使用指南入口
+      // 6. 社区交流（父分组，合并更新与维护、社区支持）
+      {
+        text: '社区交流',
+        children: [
+          { text: '更新与维护', link: '/guide/maintenance/' },
+          { text: '社区支持', link: '/guide/community/' }
+        ]
+      },
+      // 7. 使用指南入口
       { text: '使用指南', link: '/guide/user-guide/' },
-      // 官网入口 
+      // 8. 官网入口 
       { text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
     ],
     series: {
