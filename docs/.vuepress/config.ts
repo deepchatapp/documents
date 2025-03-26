@@ -23,34 +23,34 @@ export default defineUserConfig({
       // 1. 项目简介入口
       { icon: 'IconHome', text: '项目简介', link: '/guide/introduction/' },
       // 2. 快速开始入口
-      { icon: 'ThunderboltFilled', text: '快速开始', link: '/guide/getting-started/' },
+      { icon: 'IconRocket', text: '快速开始', link: '/guide/getting-started/' },
       // 3. 功能介绍（父分组，合并核心功能、高级功能和模型集成）
       {
-        icon: 'AppstoreFilled',
+        icon: 'IconFeatures',
         text: '功能介绍',
         children: [
-          { icon: 'ControlFilled', text: '核心功能', link: '/guide/core-features/' },
-          { icon: 'RocketFilled', text: '高级功能', link: '/guide/advanced-features/' },
-          { icon: 'ApiOutlined', text: '模型集成', link: '/guide/model-integration/' }
+          { icon: 'IconCore', text: '核心功能', link: '/guide/core-features/' },
+          { icon: 'IconAdvanced', text: '高级功能', link: '/guide/advanced-features/' },
+          { icon: 'IconModel', text: '模型集成', link: '/guide/model-integration/' }
         ]
       },
       // 4. 使用技巧入口
-      { icon: 'BulbFilled', text: '使用技巧', link: '/guide/tips/' },
+      { icon: 'IconTips', text: '使用技巧', link: '/guide/tips/' },
       // 5. 故障排除入口
-      { icon: 'ToolFilled', text: '故障排除', link: '/guide/troubleshooting/' },
+      { icon: 'IconTrouble', text: '故障排除', link: '/guide/troubleshooting/' },
       // 6. 社区交流（父分组，合并更新与维护、社区支持）
       {
-        icon: 'TeamOutlined',
+        icon: 'IconCommunity',
         text: '社区交流',
         children: [
-          { icon: 'SyncOutlined', text: '更新与维护', link: '/guide/maintenance/' },
-          { icon: 'CommentOutlined', text: '社区支持', link: '/guide/community/' }
+          { icon: 'IconMaintenance', text: '更新与维护', link: '/guide/maintenance/' },
+          { icon: 'IconSupport', text: '社区支持', link: '/guide/community/' }
         ]
       },
       // 7. 使用指南入口
-      { icon: 'BookFilled', text: '使用指南', link: '/guide/user-guide/' },
+      { icon: 'IconGuide', text: '使用指南', link: '/guide/user-guide/' },
       // 8. 官网入口 
-      { icon: 'HomeFilled', text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
+      { icon: 'IconHome', text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
     ],
     series: {
       '/guide/introduction/': [
