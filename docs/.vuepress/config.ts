@@ -18,36 +18,39 @@ export default defineUserConfig({
     logo: 'https://deepchat.thinkinai.xyz/logo.png',
     author: 'DeepChat',
     authorAvatar: 'https://deepchat.thinkinai.xyz/logo.png',
+    docsDir: '/docs',
     navbar: [
       // 1. 项目简介入口
-      { icon: 'IconDocument',text: '项目简介', link: '/guide/introduction/' },
+      { icon: 'IconHome', text: '项目简介', link: '/guide/introduction/' },
       // 2. 快速开始入口
-      { text: '快速开始', link: '/guide/getting-started/' },
+      { icon: 'ThunderboltFilled', text: '快速开始', link: '/guide/getting-started/' },
       // 3. 功能介绍（父分组，合并核心功能、高级功能和模型集成）
       {
+        icon: 'AppstoreFilled',
         text: '功能介绍',
         children: [
-          { text: '核心功能', link: '/guide/core-features/' },
-          { text: '高级功能', link: '/guide/advanced-features/' },
-          { text: '模型集成', link: '/guide/model-integration/' }
+          { icon: 'ControlFilled', text: '核心功能', link: '/guide/core-features/' },
+          { icon: 'RocketFilled', text: '高级功能', link: '/guide/advanced-features/' },
+          { icon: 'ApiOutlined', text: '模型集成', link: '/guide/model-integration/' }
         ]
       },
       // 4. 使用技巧入口
-      { text: '使用技巧', link: '/guide/tips/' },
+      { icon: 'BulbFilled', text: '使用技巧', link: '/guide/tips/' },
       // 5. 故障排除入口
-      { text: '故障排除', link: '/guide/troubleshooting/' },
+      { icon: 'ToolFilled', text: '故障排除', link: '/guide/troubleshooting/' },
       // 6. 社区交流（父分组，合并更新与维护、社区支持）
       {
+        icon: 'TeamOutlined',
         text: '社区交流',
         children: [
-          { text: '更新与维护', link: '/guide/maintenance/' },
-          { text: '社区支持', link: '/guide/community/' }
+          { icon: 'SyncOutlined', text: '更新与维护', link: '/guide/maintenance/' },
+          { icon: 'CommentOutlined', text: '社区支持', link: '/guide/community/' }
         ]
       },
       // 7. 使用指南入口
-      { text: '使用指南', link: '/guide/user-guide/' },
+      { icon: 'BookFilled', text: '使用指南', link: '/guide/user-guide/' },
       // 8. 官网入口 
-      { text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
+      { icon: 'HomeFilled', text: '官网', link: 'https://deepchat.thinkinai.xyz/' } 
     ],
     series: {
       '/guide/introduction/': [

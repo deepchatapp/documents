@@ -1,0 +1,3 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><path d="M25 10h-3V9a5.006 5.006 0 0 0-5-5h-2a5.006 5.006 0 0 0-5 5v1H7a2.006 2.006 0 0 0-2 2v16a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V12a2.006 2.006 0 0 0-2-2zM12 9a3.003 3.003 0 0 1 3-3h2a3.003 3.003 0 0 1 3 3v1h-8zm13 19H7V12h3v3h2v-3h8v3h2v-3h3z" fill="currentColor"></path></svg>
+</template> 

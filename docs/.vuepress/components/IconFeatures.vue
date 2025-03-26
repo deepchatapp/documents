@@ -1,0 +1,3 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><path d="M8 4v4H4V4h4m2-2H2v8h8V2z" fill="currentColor"></path><path d="M18 4v4h-4V4h4m2-2h-8v8h8V2z" fill="currentColor"></path><path d="M28 4v4h-4V4h4m2-2h-8v8h8V2z" fill="currentColor"></path><path d="M8 14v4H4v-4h4m2-2H2v8h8v-8z" fill="currentColor"></path><path d="M18 14v4h-4v-4h4m2-2h-8v8h8v-8z" fill="currentColor"></path><path d="M28 14v4h-4v-4h4m2-2h-8v8h8v-8z" fill="currentColor"></path><path d="M8 24v4H4v-4h4m2-2H2v8h8v-8z" fill="currentColor"></path><path d="M18 24v4h-4v-4h4m2-2h-8v8h8v-8z" fill="currentColor"></path><path d="M28 24v4h-4v-4h4m2-2h-8v8h8v-8z" fill="currentColor"></path></svg>
+</template> 
