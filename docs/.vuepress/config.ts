@@ -92,7 +92,6 @@ export default defineUserConfig({
           text: '高级功能',
           children: [
             '/guide/advanced-features/',
-            '/guide/advanced-features/custom-settings',
             '/guide/advanced-features/shortcuts',
             '/guide/advanced-features/themes',
             '/guide/advanced-features/data-management',
