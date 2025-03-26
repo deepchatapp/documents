@@ -31,6 +31,12 @@ export default defineUserConfig({
       { text: '模型集成', link: '/guide/model-integration/' },
       // 使用技巧入口
       { text: '使用技巧', link: '/guide/tips/' },
+      // 故障排除入口
+      { text: '故障排除', link: '/guide/troubleshooting/' },
+      // 更新与维护入口
+      { text: '更新与维护', link: '/guide/maintenance/' },
+      // 社区支持入口
+      { text: '社区支持', link: '/guide/community/' },
       // 使用指南入口
       { text: '使用指南', link: '/guide/user-guide/' },
       // 官网入口 
@@ -105,6 +111,41 @@ export default defineUserConfig({
             '/guide/tips/faq',
             '/guide/tips/optimization',
             '/guide/tips/security',
+          ]
+        }
+      ],
+      '/guide/troubleshooting/': [
+        {
+          text: '故障排除',
+          children: [
+            '/guide/troubleshooting/',
+            '/guide/troubleshooting/common-errors',
+            '/guide/troubleshooting/solutions',
+            '/guide/troubleshooting/logs',
+          ]
+        }
+      ],
+      '/guide/maintenance/': [
+        {
+          text: '更新与维护',
+          children: [
+            '/guide/maintenance/',
+            '/guide/maintenance/versions',
+            '/guide/maintenance/backup',
+            '/guide/maintenance/system',
+            '/guide/maintenance/security-updates',
+          ]
+        }
+      ],
+      '/guide/community/': [
+        {
+          text: '社区支持',
+          children: [
+            '/guide/community/',
+            '/guide/community/join',
+            '/guide/community/contributing',
+            '/guide/community/issue-report',
+            '/guide/community/resources',
           ]
         }
       ],
