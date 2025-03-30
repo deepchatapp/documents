@@ -33,20 +33,11 @@
 5. 从启动台或应用程序文件夹启动 DeepChat
 
 ### Linux
+1. 访问 [DeepChat 官网](https://deepchat.thinkinai.xyz/) 下载页面
+2. 下载最新版本的 Linux 安装程序 (.AppImage 文件)
+3. 为下载的 AppImage 文件添加执行权限
+4. 双击运行 AppImage 文件启动 DeepChat
 
-对于 Ubuntu/Debian 系统：
-
-```bash
-# 添加 DeepChat 仓库
-curl -s https://deepchat.thinkinai.xyz/linux/ubuntu/gpg.key | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://deepchat.thinkinai.xyz/linux/ubuntu stable main"
-
-# 更新并安装
-sudo apt update
-sudo apt install deepchat
-```
-
-更多 Linux 安装选项请参考[安装步骤](./installation.md)页面。
 
 ## 安装后的首要步骤
 
@@ -57,14 +48,6 @@ sudo apt install deepchat
 3. **创建对话**：开始您的第一次 AI 对话
 
 这些步骤在[首次使用配置](./initial-setup.md)中有详细介绍。
-
-## 视频教程
-
-观看我们的入门视频教程，了解 DeepChat 的基本使用方法：
-
-<div class="video-container">
-  <iframe src="https://player.bilibili.com/player.html?aid=123456789&bvid=BV1xx411c7mD&cid=123456789&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-</div>
 
 ## 常见问题
 
