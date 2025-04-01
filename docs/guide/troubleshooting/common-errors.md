@@ -148,6 +148,19 @@
         - 重启终端
         - 重新登录系统
 
+## 本地运行项目问题
+
+1. **ModuleNotFoundError: No module named 'distutils'**
+    - **问题原因**：高版本的python不在默认带这个包，需要手动安装一下
+    - **解决方案**：
+      `pip install setuptools`
+
+2. **mcp 运行时异常 McpError: MCP error -32000: Connection closed**
+    - **问题原因**：如果你的mcp服务是一个可执行文件，可能会出现这个问题，原因是找不到这个可执行文件
+    - **解决方案**：
+      - windows填成可执行文件的绝对路径，比如`C:\Users\username\bin\可执行文件名字.exe`
+      - mac 则添加到环境变量，比如`export PATH=$PATH:/Users/username/bin`
+
 ## 获取更多帮助
 
 如果您遇到的问题未在上述列表中，建议：
