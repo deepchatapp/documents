@@ -148,6 +148,13 @@
         - 重启终端
         - 重新登录系统
 
+## 本地运行项目问题
+
+1. **ModuleNotFoundError: No module named 'distutils'**
+    - **问题原因**：高版本的python不在默认带这个包，需要手动安装一下
+    - **解决方案**：
+      `pip install setuptools`
+
 ## 获取更多帮助
 
 如果您遇到的问题未在上述列表中，建议：
