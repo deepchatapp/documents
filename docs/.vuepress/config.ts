@@ -129,7 +129,6 @@ export default defineUserConfig({
           children: [
             '/guide/troubleshooting/',
             '/guide/troubleshooting/common-errors',
-            '/guide/troubleshooting/solutions',
             '/guide/troubleshooting/logs',
           ]
         }

@@ -158,8 +158,9 @@
 2. **mcp 运行时异常 McpError: MCP error -32000: Connection closed**
     - **问题原因**：如果你的mcp服务是一个可执行文件，可能会出现这个问题，原因是找不到这个可执行文件
     - **解决方案**：
-      - windows填成可执行文件的绝对路径，比如`C:\Users\username\bin\可执行文件名字.exe`
-      - mac 则添加到环境变量，比如`export PATH=$PATH:/Users/username/bin`
+      - windows 填成可执行文件的绝对路径，比如`C:\Users\username\bin\可执行文件名字.exe`
+      - windows 也可以添加到环境变量，在PATH里面添加这个可执行文件的目录，切记新加了PATH需要重启deepchat
+      - mac 则添加到环境变量，比如`export PATH=$PATH:/Users/username/bin`, 同样需要重新启动deepchat
 
 ## 获取更多帮助
 
