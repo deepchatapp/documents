@@ -96,6 +96,7 @@ export default defineUserConfig({
             '/guide/advanced-features/themes',
             '/guide/advanced-features/data-management',
             '/guide/advanced-features/languages',
+            '/guide/advanced-features/knowledge',
           ]
         }
       ],
@@ -129,7 +130,6 @@ export default defineUserConfig({
           children: [
             '/guide/troubleshooting/',
             '/guide/troubleshooting/common-errors',
-            '/guide/troubleshooting/solutions',
             '/guide/troubleshooting/logs',
           ]
         }
