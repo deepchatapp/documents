@@ -96,6 +96,7 @@ export default defineUserConfig({
             '/guide/advanced-features/themes',
             '/guide/advanced-features/data-management',
             '/guide/advanced-features/languages',
+            '/guide/advanced-features/mcp',
             '/guide/advanced-features/knowledge',
           ]
         }
