@@ -31,6 +31,7 @@ export default defineUserConfig({
         children: [
           { icon: 'IconCore', text: '核心功能', link: '/guide/core-features/' },
           { icon: 'IconAdvanced', text: '高级功能', link: '/guide/advanced-features/' },
+          { icon: 'IconMCP', text: 'MCP', link: '/guide/mcp/' },
           { icon: 'IconModel', text: '模型集成', link: '/guide/model-integration/' }
         ]
       },
@@ -98,6 +99,17 @@ export default defineUserConfig({
             '/guide/advanced-features/languages',
             '/guide/advanced-features/mcp',
             '/guide/advanced-features/knowledge',
+          ]
+        }
+      ],
+      '/guide/mcp/': [
+        {
+          text: 'MCP',
+          children: [
+            '/guide/mcp/',
+            '/guide/mcp/built-in',
+            '/guide/mcp/higress',
+            '/guide/mcp/custom',
           ]
         }
       ],
