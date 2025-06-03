@@ -51,7 +51,7 @@ DeepChat 提供大量常用内置MCP，降低用户使用难度，快速上手mc
 
 ## 博查搜索
 博查搜索 API https://open.bochaai.com/
-![博查搜索](./images/bocha.png)
+![博查搜索](./images/bocha_search.png)
 
 ### 功能介绍
 - 网页搜索：从数十亿个Web文档中获取增强的搜索详细信息，包括页面标题、网址、摘要、网站名称、网站图标、发布日期、图像链接等。
