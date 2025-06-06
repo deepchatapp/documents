@@ -76,8 +76,8 @@ DeepChat 允许用户手动添加MCP服务
 
 - 本地项目同理，只需要替换掉 `baseUrl` 即可
 
-
 ## Streamable http 
+
 整体和[sse](#sse)类似，只是替换了 `baseUrl` 和 `type`
 
 ### 配置格式
